@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation | Minh & An</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">WEDDING INVITATION</p>
+      <h1>Minh <span>&</span> An</h1>
+      <p class="date">20 · 12 · 2026</p>
+      <a href="#details" class="btn">XEM THIỆP</a>
+    </div>
+  </header>
+
+  <main id="details">
+    <section class="intro section">
+      <p class="eyebrow">WE ARE GETTING MARRIED</p>
+      <h2>Một hành trình mới<br>chúng mình cùng nhau bắt đầu</h2>
+      <p class="text">
+        Sự hiện diện của bạn là niềm vui và là món quà ý nghĩa
+        nhất đối với chúng mình trong ngày đặc biệt này.
+      </p>
+    </section>
+
+    <section class="couple section">
+      <div class="person">
+        <div class="photo photo-groom">M</div>
+        <h3>MINH</h3>
+        <p>Chú rể</p>
+      </div>
+      <div class="amp">&</div>
+      <div class="person">
+        <div class="photo photo-bride">A</div>
+        <h3>AN</h3>
+        <p>Cô dâu</p>
+      </div>
+    </section>
+
+    <section class="event section">
+      <p class="eyebrow">THE WEDDING DAY</p>
+      <h2>Ngày trọng đại</h2>
+
+      <div class="event-card">
+        <p class="event-label">THỨ BẢY</p>
+        <div class="big-date">20</div>
+        <p class="month">THÁNG 12 · 2026</p>
+        <div class="divider"></div>
+        <p><strong>18:00</strong> · ĐÓN KHÁCH</p>
+        <p><strong>19:00</strong> · TIỆC CƯỚI</p>
+      </div>
+
+      <div class="location">
+        <p class="eyebrow">VENUE</p>
+        <h3>THE WEDDING GARDEN</h3>
+        <p>123 Nguyễn Văn Trỗi, TP. Hồ Chí Minh</p>
+        <a class="map-btn" href="https://maps.google.com/" target="_blank">XEM BẢN ĐỒ</a>
+      </div>
+    </section>
+
+    <section class="countdown section">
+      <p class="eyebrow">COUNTING DOWN</p>
+      <h2>Đếm ngược đến ngày hạnh phúc</h2>
+      <div class="timer">
+        <div><span id="days">00</span><small>NGÀY</small></div>
+        <div><span id="hours">00</span><small>GIỜ</small></div>
+        <div><span id="minutes">00</span><small>PHÚT</small></div>
+        <div><span id="seconds">00</span><small>GIÂY</small></div>
+      </div>
+    </section>
+
+    <section class="rsvp section">
+      <p class="eyebrow">WITH LOVE</p>
+      <h2>Rất mong được gặp bạn!</h2>
+      <p class="text">
+        Hãy xác nhận tham dự để chúng mình chuẩn bị chu đáo nhất nhé.
+      </p>
+      <a class="btn dark" href="https://forms.google.com/" target="_blank">XÁC NHẬN THAM DỰ</a>
+    </section>
+
+    <section class="gift section">
+      <p class="eyebrow">WEDDING GIFT</p>
+      <h2>Mừng cưới</h2>
+      <p class="text">Bạn có thể gửi lời chúc và món quà qua QR bên dưới.</p>
+      <div class="qr">QR</div>
+      <p class="bank">MB BANK · MINH NGUYEN</p>
+    </section>
+  </main>
+
+  <footer>
+    <h2>Minh & An</h2>
+    <p>Thank you for being part of our story ♡</p>
+  </footer>
+
+  <script>
+    const weddingDate = new Date("December 20, 2026 18:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>

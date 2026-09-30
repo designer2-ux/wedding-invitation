@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f8f5ef;
+  color: #39352f;
+  line-height: 1.7;
+}
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(52, 45, 37, .32), rgba(52, 45, 37, .42)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 20%, rgba(0,0,0,.2));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 24px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(70px, 14vw, 150px);
+  font-weight: 400;
+  line-height: .9;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  font-style: italic;
+  font-size: .65em;
+}
+
+.date {
+  letter-spacing: 5px;
+  font-size: 13px;
+  margin-bottom: 38px;
+}
+
+.btn,
+.map-btn {
+  display: inline-block;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.7);
+  padding: 13px 27px;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 3px;
+  transition: .3s;
+}
+
+.btn:hover,
+.map-btn:hover {
+  background: #fff;
+  color: #39352f;
+}
+
+.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.intro h2,
+.event h2,
+.countdown h2,
+.rsvp h2,
+.gift h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.text {
+  max-width: 580px;
+  margin: auto;
+  color: #746e64;
+  font-size: 14px;
+}
+
+.couple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+.person {
+  width: 250px;
+}
+
+.photo {
+  width: 210px;
+  height: 280px;
+  margin: auto auto 22px;
+  display: grid;
+  place-items: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 90px;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-groom {
+  background:
+    linear-gradient(rgba(40,35,30,.2), rgba(40,35,30,.35)),
+    url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80")
+    center/cover;
+}
+
+.photo-bride {
+  background:
+    linear-gradient(rgba(40,35,30,.12), rgba(40,35,30,.25)),
+    url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80")
+    center/cover;
+}
+
+.person h3 {
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+.person p {
+  color: #8c857a;
+  font-size: 12px;
+}
+
+.amp {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 60px;
+  font-style: italic;
+}
+
+.event {
+  background: #eee9df;
+  max-width: none;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.event-card {
+  max-width: 430px;
+  margin: 45px auto;
+  padding: 45px 25px;
+  background: #f8f5ef;
+}
+
+.event-label,
+.month {
+  letter-spacing: 3px;
+  font-size: 11px;
+}
+
+.big-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 110px;
+  line-height: 1;
+  margin: 10px 0;
+}
+
+.divider {
+  width: 45px;
+  height: 1px;
+  background: #aaa294;
+  margin: 28px auto;
+}
+
+.location h3 {
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.location p {
+  color: #746e64;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.map-btn {
+  color: #39352f;
+  border-color: #aaa294;
+}
+
+.countdown {
+  background: #3f3a34;
+  color: white;
+  max-width: none;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 6vw, 70px);
+  margin-top: 45px;
+}
+
+.timer div {
+  min-width: 55px;
+}
+
+.timer span {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(40px, 7vw, 65px);
+}
+
+.timer small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: .7;
+}
+
+.rsvp {
+  background: #f8f5ef;
+}
+
+.btn.dark {
+  color: #39352f;
+  border-color: #39352f;
+  margin-top: 30px;
+}
+
+.btn.dark:hover {
+  background: #39352f;
+  color: white;
+}
+
+.qr {
+  width: 170px;
+  height: 170px;
+  margin: 35px auto 18px;
+  display: grid;
+  place-items: center;
+  background: white;
+  border: 1px solid #ddd6ca;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.bank {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+footer {
+  padding: 60px 24px;
+  text-align: center;
+  background: #2f2b27;
+  color: white;
+}
+
+footer h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+footer p {
+  font-size: 11px;
+  opacity: .65;
+  margin-top: 8px;
+}
+
+@media (max-width: 650px) {
+  .couple {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .amp {
+    font-size: 45px;
+  }
+
+  .person {
+    width: 100%;
+  }
+
+  .photo {
+    width: min(78vw, 260px);
+    height: 330px;
+  }
+
+  .section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
